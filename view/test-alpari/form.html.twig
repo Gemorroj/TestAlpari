@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Параметры фигуры</h4>
+    </div>
+    <div class="panel-body">
+        <form action="{{ path('draw') }}" method="post">
+            <div class="form-group">
+                <label for="type">Элемент</label>
+                <select class="form-control" name="type" id="type">
+                    <option value="circle">Круг</option>
+                    <option value="square">Квадрат</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="line_width">Толщина линий</label>
+                <input type="number" name="params[line_width]" id="line_width" class="form-control" placeholder="Толщина линий" value="1" />
+            </div>
+            <div class="form-group">
+                <label for="color">Цвет</label>
+                <input type="color" id="color" name="params[color]" class="form-control" placeholder="Цвет" value="#00000" />
+            </div>
+
+            <input type="submit" class="btn btn-default" value="Рисовать"/>
+        </form>
+    </div>
+</div>

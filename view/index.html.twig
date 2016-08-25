@@ -1,0 +1,12 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %}Тест Альпари{% endblock %}
+
+{% block content %}
+    <div class="col-xs-5">
+        {% include 'test-alpari/form.html.twig' %}
+    </div>
+    <div class="col-xs-5 col-xs-offset-2 text-right">
+        {% include 'test-alpari/draw.html.twig' %}
+    </div>
+{% endblock %}
