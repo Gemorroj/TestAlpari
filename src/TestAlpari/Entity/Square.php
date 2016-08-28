@@ -11,10 +11,10 @@ class Square extends DrawingElement
     {
         $this->params; // создаем картинку в зависимости от параметров
 
-        $color = (new RGB())->color($this->params['color'] ?: '#000', 100);
+        $color = (new RGB())->color($this->params['color'] ?: '#000000');
         $size = new Box(
-            mt_rand(260, 400),
-            260
+            mt_rand(250, 360),
+            250
         );
 
         $image = $this->imagine->create($size, $color);

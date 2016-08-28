@@ -12,16 +12,22 @@ class Circle extends DrawingElement
     {
         $this->params; // создаем картинку в зависимости от параметров
 
-        $color = (new RGB())->color($this->params['color'] ?: '#000', 100);
+        $color = (new RGB())->color('#ffffff', 0);
         $size = new Box(
-            mt_rand(260, 400),
-            260
+            mt_rand(250, 360),
+            250
         );
 
         $image = $this->imagine->create($size, $color);
 
         $image->draw()
-            ->ellipse(new Point(128, 128), $size, $image->palette()->color('fff'));
+            ->ellipse(
+                new Point(180, 125),
+                $size,
+                $image->palette()->color($this->params['color'] ?: '#000000'),
+                true,
+                $this->params['thickness']
+            );
 
         $this->data = $image->get($format, $options);
     }
